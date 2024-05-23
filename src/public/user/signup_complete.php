@@ -51,10 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->bindValue(':email', $email, PDO::PARAM_STR);
     $statement->bindValue(':password', $hashed_password, PDO::PARAM_STR);
     $statement->execute();
-    
-    $_SESSION['message'] = '登録完了しました';
-    header('Location: signin.php');
-    exit();
   } else {
      // エラーがある場合はセッションにエラーメッセージを保存
     $_SESSION['errors'] = $errors;
