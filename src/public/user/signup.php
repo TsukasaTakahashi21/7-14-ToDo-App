@@ -14,6 +14,7 @@ unset($_SESSION['errors']);
 <body>
   <h2>会員登録</h2>
   <div>
+    <!-- エラーメッセージの表示-->
     <?php if(!empty($errors)): ?>
       <ul>
         <?php foreach ($errors as $error): ?>
@@ -21,9 +22,10 @@ unset($_SESSION['errors']);
         <?php endforeach; ?>
       </ul>
     <?php endif; ?>
+    <!-- 会員登録フォーム -->
     <form action="./signup_complete.php" method="post">
       <input type="text" name="user_name" placeholder="User name"><br>
-      <input type="email" name="email" id="" placeholder="Email"><br>
+      <input type="email" name="email" placeholder="Email"><br>
       <input type="password" name="password"><br>
       <input type="password" name="confirm_password" placeholder="パスワード確認"><br>
       <button type="submit">アカウント作成</button>
